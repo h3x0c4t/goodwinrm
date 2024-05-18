@@ -14,6 +14,6 @@ setup(
     author = "nu11z",
     packages=find_packages(),
     entry_points = {
-        'console_scripts': ['goodwin=goodwin.goodwin:main'],
+        'console_scripts': ['goodwinrm=goodwinrm.goodwinrm:main'],
     }
 )
