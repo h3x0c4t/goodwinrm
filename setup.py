@@ -2,7 +2,10 @@ from setuptools import setup, find_packages
 import os
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    return open(fname).read()
+
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
 
 setup(
     name = "GoodWinRM",
@@ -13,6 +16,7 @@ setup(
     url = "https://github.com/h3x0c4t/goodwinrm",
     author = "nu11z",
     packages=find_packages(),
+    install_requires=requirements,
     entry_points = {
         'console_scripts': ['goodwinrm=goodwinrm.goodwinrm:main'],
     }
