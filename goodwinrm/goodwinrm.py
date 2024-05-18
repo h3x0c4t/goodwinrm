@@ -85,8 +85,7 @@ def ExecuteCommand(cmd, p, shell_id):
     output = std_out.decode('utf-8', 'replace')
     print(output.strip())
 
-
-if __name__ == '__main__':
+def main():
     PrintBanner()
     
     args = ParseArguments()
@@ -117,3 +116,6 @@ if __name__ == '__main__':
         
 
     p.close_shell(shell_id)
+
+if __name__ == '__main__':
+    main()
