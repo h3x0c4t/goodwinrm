@@ -159,7 +159,7 @@ def main():
     completer = WordCompleter(["exit", "clear"])
     threading.Thread(target=KeepAlive, args=(p, shell_id), daemon=True).start()
     encoding = lcid_to_encoding.get(int(ExecuteCommandOutput("Get-WinSystemLocale",p,shell_id).splitlines()[3].split()[0]))
-
+    ExecuteCommandOutput(f'chcp {encoding[2:]}', p,shell_id)
     while(True):
         cmd = session.prompt(ANSI(f"\x1b[34m{args.username}@{args.ip}\x1b[0m > "), completer=completer)
         if cmd == "exit":
