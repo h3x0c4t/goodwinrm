@@ -24,7 +24,7 @@ def KeepAlive(p, shell_id):
     while True:
         time.sleep(60)
         try:
-            ExecuteCommandOutput("Get-Date", p, shell_id)
+            ExecuteCommandOutput("\n", p, shell_id)
         except Exception as e:
             PrintError(f"Error while keeping session alive: {e}")
         
